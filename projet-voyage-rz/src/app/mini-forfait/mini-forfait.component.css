@@ -1,0 +1,20 @@
+mat-slider {
+  width: 100px;
+}
+.example-card {
+  max-width: 500px;
+  height: 150px;
+  margin-bottom: 10px;
+  background-color: rgb(48, 196, 223);
+}
+.container {
+  flex-direction: row;
+}
+.mat-card {
+  display: inline-flex;
+  margin-left: 50px;
+}
+.date {
+  display: flex;
+  flex-direction: row;
+}

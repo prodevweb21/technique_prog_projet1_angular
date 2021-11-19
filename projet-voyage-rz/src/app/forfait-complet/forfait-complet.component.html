@@ -1,0 +1,59 @@
+<p>forfait-complet works!</p>
+
+<mat-card class="container-fluid"> 
+
+  <article classe="alignRight" state="state" config="config" labels="labels"></article>
+<div ng-if="flight" ng-click="onBlockClick()"> 
+
+</div>
+
+  <div class="container">
+
+    <!-- version locale -->
+    <mat-card-title P-3>
+      <img src="/assets/mexique-tulum.jpg" width="250" height="500" >
+    </mat-card-title>
+
+    <button [ngStyle]="{'font-size.px':25, 'font-style':'italic', 'color':'red'}">Forfait vedette</button>
+
+    <div class="items p-3">
+      
+    <h2>{{forfait.destination}}</h2> <h4>Du {{forfait.villeDepart}}</h4>
+    <h2><span>Séjour au </span>{{forfait.hotel.nomHotel}}</h2>
+    <br>
+    <h3>Nombre d'étoile:{{forfait.hotel.nombreEtoiles}}
+      <app-etoiles></app-etoiles>
+    </h3>
+    
+    <h3>Itinéraire:{{forfait.hotel.coordonnees}}</h3>
+    <h3>Nombre de chambre:{{forfait.hotel.nombreChambres}}</h3>
+    <h3>caracteristique:{{forfait.hotel.caracteristique}}</h3>
+
+    <br>
+    <h3>Date de départ:{{forfait.dateDepart}}</h3>
+    <h3>Date de retour: {{forfait.dateRetour}}</h3>
+    <br>
+    
+    </div>
+
+    <div class="container-flex">
+      
+      <i class="fa fa-tag" aria-hidden="true">solde</i>
+
+      <h2>{{forfait.prix}}$</h2>
+      (Taxes incluses)
+      <h5>Rabais applicable:-{{forfait.rabais}}$</h5>
+
+    </div>
+
+  
+    </div>
+    </mat-card>
+
+
+    
+
+
+     
+  
+    

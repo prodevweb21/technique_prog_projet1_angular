@@ -1,0 +1,8 @@
+ul {
+  display: inline-flex;
+}
+li {
+  margin: 0.1rem;
+  list-style: none;
+  font-size: 12px;
+}
