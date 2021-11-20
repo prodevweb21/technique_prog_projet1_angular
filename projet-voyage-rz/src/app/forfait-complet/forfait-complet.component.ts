@@ -13,11 +13,8 @@ import { FORFAITS } from '../mock-forfaits';
 })
 export class ForfaitCompletComponent implements OnInit {
 
- 
 
-  // @Input() fortait?:Forfait;
   forfaits : Forfait[] = FORFAITS;
-
 
 
   forfait: Forfait = {

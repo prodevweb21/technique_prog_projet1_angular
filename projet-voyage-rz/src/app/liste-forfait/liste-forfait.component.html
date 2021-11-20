@@ -1,18 +1,18 @@
 
 <!-- la liste des forfaits complets-->
 
- <b>Liste des forfaits completes</b>
+ <h1>La liste complètes des forfaits</h1>
  <br>
 <ul class="flex" *ngFor="let forfait of forfaits">
     <li>*Départ de {{forfait.villeDepart}}.</li>
-    <li> Vers le {{forfait.destination}}.</li>
+    <li> Vers {{forfait.destination}}.</li>
     <li>Hôtel {{forfait.hotel.nomHotel}}.</li> 
-    <li>Du {{forfait.dateDepart}}.</li>
+    <li>De {{forfait.dateDepart}}.</li>
     <li>Au {{forfait.dateRetour}}.</li>  
     <li>Prix {{forfait.prix}}$.</li> 
-    <li>Itinéraire : {{forfait.destination}}.</li>
+    <li>Adresse : {{forfait.hotel.coordonnees}}.</li>
     <li>Nombre de Chambres {{forfait.hotel.nombreChambres}}.</li> 
-    <li>Incluc {{forfait.hotel.caracteristique}}.</li>
+    <li>Inclus: {{forfait.hotel.caracteristique}}.</li>
     <li><app-etoiles></app-etoiles></li>    
 
 </ul>
@@ -20,5 +20,3 @@
   
 
   
-<!-- appliquer le rabais  -->
-<!-- ajuster la liste voir le resumé # -->
