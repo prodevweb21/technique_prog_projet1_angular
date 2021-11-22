@@ -30,9 +30,9 @@
     <br>
     </div>
     <div class="container-flex">
-    <i class="fa fa-tag" aria-hidden="true">solde</i>
+    <i class="fa fa-tag" *ngIf="forfait.vedette" aria-hidden="true">solde</i>
 
-    <!-- Application du rabais -->
+    <!-- Application du rabais au forfait vedette-->
 
     <span *ngIf="forfait.rabais >= 0"><p class="line">{{forfait.prix}}$</p> avec un <b>{{forfait.rabais}}$</b> de rabais. 
     <br> Le prix du forfait est de <b>400$</b></span>
