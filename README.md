@@ -1,6 +1,6 @@
 # technique_prog_projet1_angular
 
-#Installer les dépendences avec npm install
+#Installer les dépendences avec la commande : npm install
 
-#Ouvrer le projet ng serve --open
+#Ouvrer le projet avec la commande : ng serve --open
 
