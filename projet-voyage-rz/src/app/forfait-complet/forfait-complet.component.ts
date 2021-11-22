@@ -13,7 +13,6 @@ import { FORFAITS } from '../mock-forfaits';
 })
 export class ForfaitCompletComponent implements OnInit {
 
-
   forfaits : Forfait[] = FORFAITS;
 
 

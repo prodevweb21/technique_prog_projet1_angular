@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { EtoilesComponent } from './etoiles/etoiles.component';
 import { Forfait } from './forfait';
+import { FORFAITS } from './mock-forfaits';
+
 
 
 @Component({
@@ -10,6 +12,8 @@ import { Forfait } from './forfait';
 })
 export class AppComponent {
   // starRating = 0;
+  forfaits : Forfait[] = FORFAITS;
+
   title = 'projet-voyage-rz';
 
   forfait: Forfait = {

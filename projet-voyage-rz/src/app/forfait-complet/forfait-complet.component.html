@@ -1,16 +1,17 @@
 <!-- <p>forfait-complet works!</p> -->
 
+    <!-- Affichage de tous les forfaits -->
+      <mat-card class="container-fluid" *ngFor="let forfait of forfaits">
 
-<!-- Affichage avec ngIf du forfait vedette -->
-<mat-card class="container-fluid" *ngIf="forfait.vedette"><b>Forfait vedette des fêtes!</b>
+    <!-- Ici affichage avec ngIf du forfait vedette uniquement-->
   
-  <div class="container">
+    <div class="container" *ngIf="forfait.vedette"><b>Forfaits vedette du mois</b>
     <mat-card-title P-3>
       <img src="/assets/mexique-tulum.jpg" width="250" height="500" >
     </mat-card-title>
 
-    <!-- ngStyle pour mettre de l'avant le forfait vedette via un bouton-->
-    <button class="btn btn-danger"[ngStyle]="{'font-size.px':25, 'font-style':'initial', 'color':'black'}"><h2>Forfait vedette</h2></button>
+    <!-- ngStyle pour mettre de l'avant le forfait vedette via un bouton & affichage du bouton uniquement sur les forfait vedette-->
+    <button *ngIf="forfait.vedette" class="btn btn-danger"[ngStyle]="{'font-size.px':25, 'font-style':'initial', 'color':'black'}"><h2>Forfait vedette</h2></button>
     
 
     <div class="items p-3">
