@@ -10,7 +10,7 @@
       <img src="/assets/mexique-tulum.jpg" width="250" height="500" >
     </mat-card-title>
 
-    <!-- ngStyle pour mettre de l'avant le forfait vedette via un bouton & affichage du bouton uniquement sur les forfait vedette-->
+    <!-- ngStyle pour mettre de l'avant le forfait vedette via un bouton & affichage du bouton uniquement sur le forfait vedette-->
     <button *ngIf="forfait.vedette" class="btn btn-danger"[ngStyle]="{'font-size.px':25, 'font-style':'initial', 'color':'black'}"><h2>Forfait vedette</h2></button>
     
 
@@ -30,6 +30,8 @@
     <br>
     </div>
     <div class="container-flex">
+      
+      <!-- Application de l'icon font awesome au forfait vedette uniquement -->
     <i class="fa fa-tag" *ngIf="forfait.vedette" aria-hidden="true">solde</i>
 
     <!-- Application du rabais au forfait vedette-->
