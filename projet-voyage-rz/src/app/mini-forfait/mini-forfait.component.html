@@ -8,7 +8,7 @@
        
       <mat-card-subtitle>
       Hôtel: {{forfait.hotel.nomHotel}}
-      <app-etoiles></app-etoiles>
+      <app-etoiles [starRating]= forfait.hotel.nombreEtoiles></app-etoiles>
       <mat-card-content> 
       {{forfait.prix}}$
       

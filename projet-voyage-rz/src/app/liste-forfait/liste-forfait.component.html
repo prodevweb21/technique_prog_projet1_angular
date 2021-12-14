@@ -1,7 +1,7 @@
 
 <!-- la liste des forfaits complets-->
 
- <h1>La liste complètes des forfaits</h1>
+ <h1>La liste complète des forfaits</h1>
  <br>
 <ul class="flex" *ngFor="let forfait of forfaits">
     <li>*Départ de {{forfait.villeDepart}}.</li>
@@ -13,7 +13,8 @@
     <li>Adresse : {{forfait.hotel.coordonnees}}.</li>
     <li>Nombre de Chambres {{forfait.hotel.nombreChambres}}.</li> 
     <li>Inclus: {{forfait.hotel.caracteristique}}.</li>
-    <li><app-etoiles></app-etoiles></li>    
+    <li><app-etoiles [starRating]= forfait.hotel.nombreEtoiles></app-etoiles>
+    </li>    
 
 </ul>
 
