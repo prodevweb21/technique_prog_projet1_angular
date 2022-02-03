@@ -15,3 +15,13 @@
   justify-content: flex-end;
   justify-content: space-evenly;
 }
+
+.line {
+  text-decoration: line-through;
+  font-weight: 900;
+}
+
+i {
+  font-size: 15px;
+  color: red;
+}

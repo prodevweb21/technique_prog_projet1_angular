@@ -36,8 +36,20 @@
 
     <!-- Application du rabais au forfait vedette-->
 
-    <span *ngIf="forfait.rabais >= 0"><p class="line">{{forfait.prix}}$</p> avec un <b>{{forfait.rabais}}$</b> de rabais. 
-    <br> Le prix du forfait est de <b>400$</b></span>
+
+
+    <!-- <div ng-switch="operation">
+      <div class="result" ng-switch-when="sub">{{forfait.prix}} - {{forfait.rabais}} = {{result}}</div>
+
+    </div> -->
+
+    <!-- <ng-template [ngSwitchCase]="{{forfait.prix}}-{{forfait.rabais}}">p class="line">{{forfait.prix}}$</p> avec un <b>{{forfait.rabais}}$</b> de rabais.</ng-template> -->
+
+  
+
+    <span *ngIf="forfait.vedette  && forfait.prix >=300" istrue><p class="line">{{forfait.prix}}$</p> avec un <b>{{forfait.rabais}}$</b> de rabais. 
+      <br> Le prix du forfait est de <b>{{forfait.prix}} - {{forfait.rabais}} = {{result}} </b></span> 
+
     <br>
     (tx. et frais incl. par adulte).
     </div>

@@ -10,5 +10,4 @@ export interface Forfait {
     prix: number,
     rabais: number,
     vedette: boolean,
-    color: string,
 }

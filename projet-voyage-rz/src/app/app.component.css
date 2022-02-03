@@ -1,4 +1,14 @@
+:host {
+  background-color: rgb(247, 241, 241);
+  display: block;
+  padding: 20px;
+}
+
 h1 {
   text-align: center;
   text-decoration: underline;
+}
+
+b {
+  margin-right: 50px;
 }

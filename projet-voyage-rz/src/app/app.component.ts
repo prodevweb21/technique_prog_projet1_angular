@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Forfait } from './forfait';
 import { FORFAITS } from './mock-forfaits';
-
 
 
 @Component({
@@ -10,6 +9,8 @@ import { FORFAITS } from './mock-forfaits';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  
 
   forfaits : Forfait[] = FORFAITS;
 
@@ -31,7 +32,8 @@ export class AppComponent {
     prix: 500, 
     rabais: 100,
     vedette: true,
-    color: 'red',
 
     }
+
+    
 }

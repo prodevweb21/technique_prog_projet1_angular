@@ -1,8 +1,20 @@
 <!-- <p>mini-forfait works!</p> -->
 
 <!-- Affichage de tous les mini-forfaits -->
-<mat-card class="example-card" *ngFor="let forfait of forfaits">
+
+
+<ng-container *ngFor="let forfait of forfaits">
+
+<mat-card class="example-card" *ngIf="forfait.vedette">
+
+
+      <!-- Ici affichage avec ngIf du forfait vedette uniquement-->
+
     <mat-card-title-group>
+
+    <!-- ngStyle pour mettre de l'avant le forfait vedette via un bouton & affichage du bouton uniquement sur le forfait vedette-->
+    <button *ngIf="forfait.vedette" class="btn btn-danger"[ngStyle]="{'font-size.px':5, 'font-style':'initial', 'color':'black'}"><h2>Forfait vedette</h2></button>
+
       <mat-card-title>{{forfait.destination}} <h4>De {{forfait.villeDepart}}</h4></mat-card-title>
       
        
@@ -17,7 +29,20 @@
       <p>7 jours restants</p>
       </mat-card-content>
       
-      
+      <i class="fa fa-tag" *ngIf="forfait.vedette" aria-hidden="true">solde</i>
+      <span *ngIf="forfait.vedette  && forfait.prix ==500" istrue><p class="line">{{forfait.prix}}$</p> avec un <b>{{forfait.rabais}}$</b> de rabais. 
+        <br> Le prix du forfait sera de <b>{{result}}$</b></span> 
+
+      <span *ngIf="forfait.vedette  && forfait.prix ==1200" istrue><p class="line">{{forfait.prix}}$</p> avec un <b>{{forfait.rabais}}$</b> de rabais. 
+          <br> Le prix du forfait sera de <b>{{result1}}$</b></span> 
+  
+          <span *ngIf="forfait.vedette  && forfait.prix ==1050" istrue><p class="line">{{forfait.prix}}$</p> avec un <b>{{forfait.rabais}}$</b> de rabais. 
+            <br> Le prix du forfait sera de <b>{{result2}}$</b></span> 
+  
+
       </mat-card-subtitle>
       </mat-card-title-group>
+      <!-- </div> -->
       </mat-card>
+      </ng-container>
+

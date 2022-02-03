@@ -15,6 +15,8 @@ import { ListeForfaitComponent } from './liste-forfait/liste-forfait.component';
 import {MatListModule} from '@angular/material/list';
 import {MatTableModule} from '@angular/material/table';
 import {  FontAwesomeModule  }  from '@fortawesome/angular-fontawesome' ;
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -27,6 +29,7 @@ import {  FontAwesomeModule  }  from '@fortawesome/angular-fontawesome' ;
     ListeForfaitComponent
   ],
   imports: [
+    FormsModule,
     FontAwesomeModule,
     MatTableModule,
     MatListModule,
