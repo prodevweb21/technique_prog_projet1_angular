@@ -16,6 +16,14 @@ import {MatListModule} from '@angular/material/list';
 import {MatTableModule} from '@angular/material/table';
 import {  FontAwesomeModule  }  from '@fortawesome/angular-fontawesome' ;
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { ForfaitService } from './forfait.service';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { FormulaireComponent } from './formulaire/formulaire.component';
+
 
 
 @NgModule({
@@ -26,9 +34,15 @@ import { FormsModule } from '@angular/forms';
     EtoilesComponent,
     FormGestionForfaitComponent,
     FormulaireDeRechercheComponent,
-    ListeForfaitComponent
+    ListeForfaitComponent,
+    FormulaireComponent
   ],
   imports: [
+    MatIconModule,
+    MatButtonModule,
+    MatInputModule,
+    MatFormFieldModule,
+    HttpClientModule,
     FormsModule,
     FontAwesomeModule,
     MatTableModule,
@@ -39,7 +53,7 @@ import { FormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     NgbModule
   ],
-  providers: [],
+  providers: [ForfaitService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

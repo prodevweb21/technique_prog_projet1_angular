@@ -1,20 +1,20 @@
 <!-- <p>forfait-complet works!</p> -->
 
     <!-- Affichage de tous les forfaits -->
-      <mat-card class="container-fluid" *ngFor="let forfait of forfaits">
+      <!-- <mat-card class="container-fluid" *ngFor="let forfait of forfaits"> -->
 
     <!-- Ici affichage avec ngIf du forfait vedette uniquement-->
   
-    <div class="container" *ngIf="forfait.vedette"><b>Forfaits vedette du mois</b>
+    <!-- <div class="container" *ngIf="forfait.vedette"><b>Forfaits vedette du mois</b>
     <mat-card-title P-3>
       <img src="/assets/mexique-tulum.jpg" width="250" height="500" >
-    </mat-card-title>
+    </mat-card-title> -->
 
     <!-- ngStyle pour mettre de l'avant le forfait vedette via un bouton & affichage du bouton uniquement sur le forfait vedette-->
-    <button *ngIf="forfait.vedette" class="btn btn-danger"[ngStyle]="{'font-size.px':25, 'font-style':'initial', 'color':'black'}"><h2>Forfait vedette</h2></button>
+    <!-- <button *ngIf="forfait.vedette" class="btn btn-danger"[ngStyle]="{'font-size.px':25, 'font-style':'initial', 'color':'black'}"><h2>Forfait vedette</h2></button> -->
     
 
-    <div class="items p-3">
+    <!-- <div class="items p-3">
     <h2>{{forfait.destination}}</h2> <h4>De {{forfait.villeDepart}}.</h4>
     <h2><span>Séjour au </span>{{forfait.hotel.nomHotel}}.</h2>
     <br>
@@ -29,10 +29,10 @@
     <h3>Date de retour: {{forfait.dateRetour}}.</h3>
     <br>
     </div>
-    <div class="container-flex">
+    <div class="container-flex"> -->
       
       <!-- Application de l'icon font awesome au forfait vedette uniquement -->
-    <i class="fa fa-tag" *ngIf="forfait.vedette" aria-hidden="true">solde</i>
+    <!-- <i class="fa fa-tag" *ngIf="forfait.vedette" aria-hidden="true">solde</i> -->
 
     <!-- Application du rabais au forfait vedette-->
 
@@ -47,19 +47,18 @@
 
   
 
-    <span *ngIf="forfait.vedette  && forfait.prix >=300" istrue><p class="line">{{forfait.prix}}$</p> avec un <b>{{forfait.rabais}}$</b> de rabais. 
+    <!-- <span *ngIf="forfait.vedette  && forfait.prix >=300" istrue><p class="line">{{forfait.prix}}$</p> avec un <b>{{forfait.rabais}}$</b> de rabais. 
       <br> Le prix du forfait est de <b>{{forfait.prix}} - {{forfait.rabais}} = {{result}} </b></span> 
 
     <br>
     (tx. et frais incl. par adulte).
     </div>
     </div>
-    </mat-card>
+    </mat-card> -->
 
 
     
 
-
-     
+    
   
     

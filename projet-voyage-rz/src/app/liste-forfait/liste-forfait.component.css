@@ -13,6 +13,6 @@ li {
   font-size: 12px;
 }
 
-matColumnDef {
-  margin: 50%;
+table {
+  width: 100%;
 }

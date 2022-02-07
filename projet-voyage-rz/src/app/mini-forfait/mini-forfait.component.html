@@ -15,17 +15,17 @@
     <!-- ngStyle pour mettre de l'avant le forfait vedette via un bouton & affichage du bouton uniquement sur le forfait vedette-->
     <button *ngIf="forfait.vedette" class="btn btn-danger"[ngStyle]="{'font-size.px':5, 'font-style':'initial', 'color':'black'}"><h2>Forfait vedette</h2></button>
 
-      <mat-card-title>{{forfait.destination}} <h4>De {{forfait.villeDepart}}</h4></mat-card-title>
+      <mat-card-title>{{forfait.destination}} <h4>De {{forfait.ville_de_depart}}</h4></mat-card-title>
       
        
       <mat-card-subtitle>
-      Hôtel: {{forfait.hotel.nomHotel}}
-      <app-etoiles [starRating]= forfait.hotel.nombreEtoiles></app-etoiles>
+      Hôtel: {{forfait.hotel.nom_hotel}}
+      <app-etoiles [starRating]= forfait.hotel.nombre_etoiles></app-etoiles>
       <mat-card-content> 
       {{forfait.prix}}$
       
       (tx. et frais incl. par adulte).
-      <p>Date de départ: {{forfait.dateDepart}}</p>
+      <p>Date de départ: {{forfait.date_de_depart}}</p>
       <p>7 jours restants</p>
       </mat-card-content>
       

@@ -1,1 +1,55 @@
 <p>form-gestion-forfait works!</p>
+
+
+
+
+
+<table mat-table #tableHeros [dataSource]="forfaits">
+
+    <ng-container matColumnDef="destination">
+        <th mat-header-cell *matHeaderCellDef> Destination </th>
+        <td mat-cell *matCellDef="let forfait"> {{forfait.destination}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="ville_de_depart">
+      <th mat-header-cell *matHeaderCellDef> Ville de Départ </th>
+      <td mat-cell *matCellDef="let forfait"> {{forfait.ville_de_depart}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="nom_hotel">
+    <th mat-header-cell *matHeaderCellDef> Nom Hôtel </th>
+    <td mat-cell *matCellDef="let forfait"> {{forfait.hotel.nom_hotel}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="date_de_depart">
+      <th mat-header-cell *matHeaderCellDef> Date de départ </th>
+      <td mat-cell *matCellDef="let forfait"> {{forfait.date_de_depart}} </td>
+      </ng-container>
+
+    <ng-container matColumnDef="date_de_retour">
+    <th mat-header-cell *matHeaderCellDef> Date de retour</th>
+    <td mat-cell *matCellDef="let forfait"> {{forfait.date_de_retour}} </td>
+    </ng-container>
+  
+  <ng-container matColumnDef="prix">
+    <th mat-header-cell *matHeaderCellDef> Prix </th>
+    <td mat-cell *matCellDef="let forfait"> {{forfait.prix}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef> </th>
+        <td mat-cell *matCellDef="let forfait" class="boutonsAction">
+            <!-- <button mat-icon-button (click)="onDelete(forfait)" mat-icon-button><i class="material-icons">delete</i></button> -->
+            <form (ngSubmit)="onDelete(forfait)">
+                <button mat-button ><i class="material-icons"><b>delete</b></i></button>
+            </form>
+     
+        </td>
+        </ng-container>
+ 
+    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+    <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
+ 
+ </table>
+ 
+  

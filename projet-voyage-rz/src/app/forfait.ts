@@ -3,10 +3,10 @@ import { Hotel } from "./hotel";
 export interface Forfait {
     id: string,
     destination: string,
-    villeDepart: string,
+    ville_de_depart: string,
     hotel: Hotel,
-    dateDepart: string,
-    dateRetour: string,
+    date_de_depart: string,
+    date_de_retour: string,
     prix: number,
     rabais: number,
     vedette: boolean,

@@ -13,16 +13,14 @@ import { FORFAITS } from '../mock-forfaits';
 })
 export class ForfaitCompletComponent implements OnInit {
 
-  forfaits : Forfait[] = FORFAITS;
+  forfaits : Forfait[] = [];
 
   
-
-  result= 400 - 50;
 
   constructor() { }
 
   ngOnInit(): void {
   }
-
+    
   
 }

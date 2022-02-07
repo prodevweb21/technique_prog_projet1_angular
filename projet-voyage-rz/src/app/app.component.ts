@@ -10,7 +10,7 @@ import { FORFAITS } from './mock-forfaits';
 })
 export class AppComponent {
 
-  
+
 
   forfaits : Forfait[] = FORFAITS;
 
@@ -19,16 +19,16 @@ export class AppComponent {
   forfait: Forfait = {
     id:'1',
     destination: 'Mexique',
-    villeDepart: 'Québec', 
+    ville_de_depart: 'Québec', 
     hotel:{
-      nomHotel: 'Hilton',
+      nom_hotel: 'Hilton',
       coordonnees: '...',
-      nombreEtoiles: 6,
-      nombreChambres: 100,
-      caracteristique: ['Face à la plage', 'Ascenseur', 'Miniclub']
+      nombre_etoiles: 6,
+      nombre_chambres: 100,
+      caracteristiques: ['Face à la plage', 'Ascenseur', 'Miniclub']
     },
-    dateDepart: '2021-01-01',
-    dateRetour: '2020-01-08',
+    date_de_depart: '2021-01-01',
+    date_de_retour: '2020-01-08',
     prix: 500, 
     rabais: 100,
     vedette: true,
