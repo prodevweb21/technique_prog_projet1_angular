@@ -4,6 +4,7 @@ import { ForfaitService } from '../forfait.service';
 import {MatTable} from '@angular/material/table';  
 import { NgForm } from '@angular/forms';  
 import { MiniForfaitComponent } from '../mini-forfait/mini-forfait.component';
+import { NullTemplateVisitor } from '@angular/compiler';
 
 
 
@@ -19,6 +20,7 @@ export class FormGestionForfaitComponent implements OnInit {
 
   
   forfaits: Forfait[] = [];
+  selectedForfait: Forfait;
   
 
 
@@ -35,7 +37,19 @@ export class FormGestionForfaitComponent implements OnInit {
           .subscribe(resultat => this.forfaits = resultat);
     }
 
-   
+    onSelect(forfait: Forfait): void {
+      this.selectedForfait = forfait; 
+    }
+
+    onEdit(forfaitFormEdition: NgForm): void {
+      if (forfaitFormEdition.valid) {
+        this.forfaitService.editForfait(this.selectedForfait)
+            .subscribe(() => this.selectedForfait);
+      }
+     }
+  
+
+      
     onDelete(forfait: Forfait): void {
       this.forfaitService.deleteForfait(forfait.id)
         .subscribe(result => this.forfaits = this.forfaits.filter(p => p !== forfait));

@@ -6,6 +6,8 @@
 
 <table mat-table #tableHeros [dataSource]="forfaits">
 
+    
+
     <ng-container matColumnDef="destination">
         <th mat-header-cell *matHeaderCellDef> Destination </th>
         <td mat-cell *matCellDef="let forfait"> {{forfait.destination}} </td>
@@ -36,17 +38,32 @@
     <td mat-cell *matCellDef="let forfait"> {{forfait.prix}} </td>
       </ng-container>
 
-      <ng-container matColumnDef="actions">
+      <!-- <ng-container matColumnDef="actions">
         <th mat-header-cell *matHeaderCellDef> </th>
         <td mat-cell *matCellDef="let forfait" class="boutonsAction">
             <!-- <button mat-icon-button (click)="onDelete(forfait)" mat-icon-button><i class="material-icons">delete</i></button> -->
-            <form (ngSubmit)="onDelete(forfait)">
+            <!-- <form (ngSubmit)="onDelete(forfait)">
                 <button mat-button ><i class="material-icons"><b>delete</b></i></button>
-            </form>
+            </form> -->
      
-        </td>
-        </ng-container>
+        <!-- </td> -->
+        <!-- </ng-container> --> -->
  
+        <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef> </th>
+            <td mat-cell *matCellDef="let forfait" class="boutonsAction">
+                <button *ngIf="(selectedForfait && selectedForfait === forfait);else editButton;" color="primary" form="forfaitFormEdition" 
+         mat-button><i class="material-icons">done</i></button>
+                <ng-template #editButton>
+                    <form (ngSubmit)="onSelect(forfait)">
+                        <button mat-button><i class="material-icons">edit</i></button>
+                    </form>
+                </ng-template>
+                <form (ngSubmit)="onDelete(forfait)">
+                    <button mat-button ><i class="material-icons">delete</i></button>
+                </form>
+            </td>
+         </ng-container>
     <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
     <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
  

@@ -25,11 +25,15 @@ export class ForfaitService {
   addForfait(forfait: Forfait): Observable<Forfait>{
     return this.http.post<Forfait>(this.forfaitsUrl + 'forfait',forfait,httpOptions);
   }
-
+  // Source GitHub
   editForfait(forfait: Forfait): Observable<Forfait>{
     return this.http.put<Forfait>(this.forfaitsUrl + "?destination=" + forfait.destination, forfait, httpOptions);
   }
-
+  // source diapo cours
+    UpdateForfait(forfait: Forfait): Observable<any> {
+    const id = forfait.id;
+    return this.http.put<Forfait>(this.forfaitsUrl + 'forfait/' + id, forfait, httpOptions);
+}
   deleteForfait(id: string): Observable<Forfait> {
     return this.http.delete<Forfait>(this.forfaitsUrl + "?id=" +  id);
   }
