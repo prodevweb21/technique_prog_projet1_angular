@@ -1,13 +1,11 @@
 <p>form-gestion-forfait works!</p>
 
+<!-- <button (click)="onSelect(undefined)" mat-button><i class="material-icons">add</i></button> -->
 
 
+<table mat-table #tableForfaits [dataSource]="forfaits">
 
-
-<table mat-table #tableHeros [dataSource]="forfaits">
-
-    
-
+  
     <ng-container matColumnDef="destination">
         <th mat-header-cell *matHeaderCellDef> Destination </th>
         <td mat-cell *matCellDef="let forfait"> {{forfait.destination}} </td>
@@ -21,6 +19,27 @@
     <ng-container matColumnDef="nom_hotel">
     <th mat-header-cell *matHeaderCellDef> Nom Hôtel </th>
     <td mat-cell *matCellDef="let forfait"> {{forfait.hotel.nom_hotel}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="coordonnees">
+      <th mat-header-cell *matHeaderCellDef> Coordonnees </th>
+      <td mat-cell *matCellDef="let forfait"> {{forfait.hotel.coordonnees}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="nombre_etoiles">
+      <th mat-header-cell *matHeaderCellDef> Nombre d'etoiles </th>
+      <td mat-cell *matCellDef="let forfait"> {{forfait.hotel.nombre_etoiles}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="nombre_chambres">
+      <th mat-header-cell *matHeaderCellDef> Nombre de chambres </th>
+      <td mat-cell *matCellDef="let forfait"> {{forfait.hotel.nombre_chambres}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="caracteristiques">
+      <th mat-header-cell *matHeaderCellDef> Caracteristiques </th>
+      <td mat-cell *matCellDef="let forfait"> {{forfait.hotel.caracteristiques}} </td>
     </ng-container>
 
     <ng-container matColumnDef="date_de_depart">
@@ -38,32 +57,24 @@
     <td mat-cell *matCellDef="let forfait"> {{forfait.prix}} </td>
       </ng-container>
 
-      <!-- <ng-container matColumnDef="actions">
-        <th mat-header-cell *matHeaderCellDef> </th>
-        <td mat-cell *matCellDef="let forfait" class="boutonsAction">
-            <!-- <button mat-icon-button (click)="onDelete(forfait)" mat-icon-button><i class="material-icons">delete</i></button> -->
-            <!-- <form (ngSubmit)="onDelete(forfait)">
-                <button mat-button ><i class="material-icons"><b>delete</b></i></button>
-            </form> -->
-     
-        <!-- </td> -->
-        <!-- </ng-container> --> -->
- 
-        <ng-container matColumnDef="actions">
-            <th mat-header-cell *matHeaderCellDef> </th>
-            <td mat-cell *matCellDef="let forfait" class="boutonsAction">
-                <button *ngIf="(selectedForfait && selectedForfait === forfait);else editButton;" color="primary" form="forfaitFormEdition" 
-         mat-button><i class="material-icons">done</i></button>
-                <ng-template #editButton>
-                    <form (ngSubmit)="onSelect(forfait)">
-                        <button mat-button><i class="material-icons">edit</i></button>
-                    </form>
-                </ng-template>
-                <form (ngSubmit)="onDelete(forfait)">
-                    <button mat-button ><i class="material-icons">delete</i></button>
-                </form>
-            </td>
-         </ng-container>
+      <ng-container matColumnDef="rabais">
+        <th mat-header-cell *matHeaderCellDef> Rabais </th>
+        <td mat-cell *matCellDef="let forfait"> {{forfait.rabais}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="vedette">
+            <th mat-header-cell *matHeaderCellDef>vedette </th>
+            <td mat-cell *matCellDef="let forfait"> {{forfait.vedette}} </td>
+              </ng-container>
+        
+    
+              <ng-container matColumnDef="actions">
+                <th mat-header-cell *matHeaderCellDef> </th>
+                <td mat-cell *matCellDef="let forfait" class="boutonsAction">
+                    <button (click)="onSelect(forfait)" mat-button><i class="material-icons">edit</i></button>
+                    <button (click)="onDelete(forfait)" mat-button><i class="material-icons">delete</i></button>
+                </td>
+            </ng-container>
     <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
     <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
  
