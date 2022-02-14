@@ -16,7 +16,7 @@ import { NullTemplateVisitor } from '@angular/compiler';
 })
 export class FormGestionForfaitComponent implements OnInit {
 
-  columnsToDisplay = ['destination', 'ville_de_depart', 'nom_hotel', 'date_de_depart', 'date_de_retour', 'prix'];
+  columnsToDisplay = ['destination', 'ville_de_depart', 'nom_hotel', 'date_de_depart', 'date_de_retour', 'prix', 'actions'];
 
   
   forfaits: Forfait[] = [];
