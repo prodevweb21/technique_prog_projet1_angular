@@ -10,7 +10,7 @@ import { FORFAITS } from './mock-forfaits';
 })
 export class AppComponent {
 
-
+  
 
   forfaits : Forfait[] = FORFAITS;
 

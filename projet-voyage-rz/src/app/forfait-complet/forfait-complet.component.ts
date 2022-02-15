@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { EtoilesComponent } from '../etoiles/etoiles.component';
 import { Forfait } from '../forfait';
-import { FORFAITS } from '../mock-forfaits';
+import { ForfaitService } from '../forfait.service';
+// import { FORFAITS } from '../mock-forfaits';
 
 
 
@@ -13,14 +14,23 @@ import { FORFAITS } from '../mock-forfaits';
 })
 export class ForfaitCompletComponent implements OnInit {
 
-  forfaits : Forfait[] = [];
+  titre = 'La liste complètes des forfaits'
 
-  
+  result= 500-100;
+  result1=1200-100;
+  result2=1050-100
 
-  constructor() { }
+  forfaits: Forfait[] = [];
+
+  constructor(private forfaitService: ForfaitService ) { }
 
   ngOnInit(): void {
+    this.getForfaits()
   }
     
+  getForfaits(): void {
+    this.forfaitService.getForfaits()
+      .subscribe(resultat => this.forfaits = resultat);
+  }
   
 }

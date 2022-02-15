@@ -33,7 +33,7 @@ const ELEMENT_DATA: Forfait[] = [
 })
 export class ListeForfaitComponent implements OnInit {
 
-  displayedColumns: string[] = ['id', 'destination', 'ville_de_depart', 'nom_hotel', 'coordonnees', 'nombre_etoiles', 'nombre_chambres', 'caracteristiques','date_de_depart', 'date_de_retour', 'prix' ];
+displayedColumns: string[] = ['id', 'destination', 'ville_de_depart', 'nom_hotel', 'coordonnees', 'nombre_etoiles', 'nombre_chambres', 'caracteristiques','date_de_depart', 'date_de_retour', 'prix' ];
   dataSource = ELEMENT_DATA;
   
   // forfaits : Forfait[] = FORFAITS;

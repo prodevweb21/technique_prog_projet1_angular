@@ -1,11 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Forfait } from '../forfait';
 import { ForfaitService } from '../forfait.service';
-import {MatTable} from '@angular/material/table';  
-import { NgForm } from '@angular/forms';  
-import { MiniForfaitComponent } from '../mini-forfait/mini-forfait.component';
-import { NullTemplateVisitor } from '@angular/compiler';
-import { FormulaireComponent } from '../formulaire/formulaire.component';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogFormulaireForfaitsComponent } from '../dialog-formulaire-forfaits/dialog-formulaire-forfaits.component';
 
 
 
@@ -16,18 +13,12 @@ import { FormulaireComponent } from '../formulaire/formulaire.component';
 })
 export class FormGestionForfaitComponent implements OnInit {
 
-<<<<<<< HEAD
-  columnsToDisplay = ['destination', 'ville_de_depart', 'nom_hotel', 'date_de_depart', 'date_de_retour', 'prix', 'actions'];
-
-  
-=======
->>>>>>> 4bbc77b86c76f754b4816595e60d8c40c02866d9
   forfaits: Forfait[] = [];
   selectedForfait?: Forfait;
 
   columnsToDisplay = ['destination', 'ville_de_depart', 'nom_hotel', 'coordonnees', 'nombre_etoiles', 'nombre_chambres', 'caracteristiques', 'date_de_depart', 'date_de_retour', 'prix', 'rabais', 'vedette', 'actions'];
 
-  constructor(private forfaitService: ForfaitService) { }
+  constructor(private forfaitService: ForfaitService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.getForfaits();
@@ -44,15 +35,20 @@ export class FormGestionForfaitComponent implements OnInit {
         .subscribe(result => this.forfaits = this.forfaits.filter(p => p !== forfait));
     }
   
-
-    onSelect(forfait?: Forfait) {
-      if (!forfait) {
-        this.selectedForfait = {id: '', destination: '', ville_de_depart: '', hotel:{nom_hotel: '', coordonnees: '', nombre_etoiles: 0, nombre_chambres: 0, caracteristiques: ['']}, date_de_depart: '', date_de_retour: '', prix: 0, rabais: 0, vedette: true,};
-      } else { 
-        this.selectedForfait = forfait;
-      }
-    }
     
-
+    //  Edite  avec le dialog
+    onSelect(forfait: Forfait) {
+      this.selectedForfait = forfait;
+      const dialogRef = this.dialog.open(DialogFormulaireForfaitsComponent, {
+        width: '500px',
+        data: this.selectedForfait,
+      });
+        
+      dialogRef.afterClosed().subscribe(result => {
+        this.selectedForfait = result;
+      });
+     
+  }
+    
     
     }

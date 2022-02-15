@@ -1,10 +1,17 @@
-<p>form-gestion-forfait works!</p>
+<!-- <p>form-gestion-forfait works!</p> -->
 
 <!-- <button (click)="onSelect(undefined)" mat-button><i class="material-icons">add</i></button> -->
+
+<app-formulaire (majTableau)="getForfaits();"></app-formulaire>
 
 
 <table mat-table #tableForfaits [dataSource]="forfaits">
 
+
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> id </th>
+    <td mat-cell *matCellDef="let forfait"> {{forfait.id}} </td>
+</ng-container>
   
     <ng-container matColumnDef="destination">
         <th mat-header-cell *matHeaderCellDef> Destination </th>

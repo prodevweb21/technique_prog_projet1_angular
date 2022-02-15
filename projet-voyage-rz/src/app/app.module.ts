@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { ForfaitService } from './forfait.service';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -19,13 +20,15 @@ import {MatTableModule} from '@angular/material/table';
 import {  FontAwesomeModule  }  from '@fortawesome/angular-fontawesome' ;
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { ForfaitService } from './forfait.service';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { FormulaireComponent } from './formulaire/formulaire.component';
-
+import {MatChipsModule} from '@angular/material/chips';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { DialogFormulaireForfaitsComponent } from './dialog-formulaire-forfaits/dialog-formulaire-forfaits.component';
 
 
 @NgModule({
@@ -38,9 +41,14 @@ import { FormulaireComponent } from './formulaire/formulaire.component';
     FormulaireDeRechercheComponent,
     ListeForfaitComponent,
     FormulaireComponent,
-    // DialogFormulaireForfaitsComponent
+    DialogFormulaireForfaitsComponent,
+
   ],
   imports: [
+    MatDialogModule,
+    MatAutocompleteModule,
+    ReactiveFormsModule,
+    MatChipsModule,
     MatIconModule,
     MatButtonModule,
     MatInputModule,
