@@ -5,7 +5,7 @@
 
     <mat-form-field appearance="fill" class="half-width">
         <mat-label>id</mat-label>
-        <input name="id" [(ngModel)]="forfait.id" name="id" #id="ngModel" matInput required minlength="2" maxlength="50"  placeholder="Ex">
+        <input name="id" [(ngModel)]="forfait.id" name="id" #id="ngModel" matInput placeholder="Ex">
         <!-- <mat-error *ngIf="destination.invalid && (destination.dirty || destination.touched) && destination.hasError('required')">La destination est obligatoire.</mat-error> -->
         <!-- <mat-error *ngIf="destination.invalid && (destination.dirty || destination.touched) && destination.hasError('minlength')">Le nom doit contenir au moins 2 caractères.</mat-error> -->
         <!-- <mat-error *ngIf="destination.invalid && (destination.dirty || destination.touched) && destination.hasError('maxlength')">Le nom doit contenir au maximum 50 caractères.</mat-error> -->
@@ -80,7 +80,7 @@
             [matAutocomplete]="auto"
             [matChipInputFor]="chipList"
             [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
-            (matChipInputTokenEnd)="add($event)">
+            (matChipInputTokenEnd)="add($event)"> 
             
         </mat-chip-list>
         <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
@@ -88,8 +88,7 @@
             {{caracteristique}}
           </mat-option>
         </mat-autocomplete>
-      </mat-form-field>
-
+      </mat-form-field> 
 
 
 
@@ -125,7 +124,7 @@
 
     <mat-form-field appearance="fill" class="half-width">
         <mat-label>Vedette</mat-label>
-        <input name="vedette" [(ngModel)]="forfait.vedette" name="vedette" #vedette="ngModel" matInput required minlength="2" maxlength="50"  placeholder="Ex. ">
+        <input name="vedette" [(ngModel)]="forfait.vedette" name="vedette" #vedette="ngModel" matInput required type="text" placeholder="Ex. ">
         <mat-error *ngIf="vedette.invalid && (vedette.dirty || vedette.touched) && vedette.hasError('required')">Le champs est obligatoire.</mat-error>
         <mat-error *ngIf="coordonnees.invalid && (coordonnees.dirty || coordonnees.touched) && coordonnees.hasError('minlength')">Le nom doit contenir au moins 2 caractères.</mat-error>
         <mat-error *ngIf="coordonnees.invalid && (coordonnees.dirty || coordonnees.touched) && coordonnees.hasError('maxlength')">Le nom doit contenir au maximum 50 caractères.</mat-error>
@@ -134,3 +133,5 @@
     <button matSuffix type="submit"  mat-raised-button (click)="onCancel()">Annuler</button>&nbsp;
     <button matSuffix type="submit"  mat-raised-button [disabled]="!forfaitForm.form.valid" (click)="onSave(forfaitForm)">ok</button>
 </form>
+
+

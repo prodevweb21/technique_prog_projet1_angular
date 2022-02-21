@@ -1,8 +1,14 @@
 <!-- <p>form-gestion-forfait works!</p> -->
 
-<!-- <button (click)="onSelect(undefined)" mat-button><i class="material-icons">add</i></button> -->
+<!-- Ce lien permet de reduire le formulaire sous forme d'îcon -->
 
-<app-formulaire (majTableau)="getForfaits();"></app-formulaire>
+<h2>Ajouter un forfait:</h2>
+
+<button (click)="onSelect(undefined)" mat-button><i class="material-icons">add</i></button>
+
+<!-- Ce lien permet de faire apparaître le formulaire -->
+
+<!-- <app-formulaire (majTableau)="getForfaits();"></app-formulaire> -->
 
 
 <table mat-table #tableForfaits [dataSource]="forfaits">
@@ -87,4 +93,9 @@
  
  </table>
  
-  
+<br>
+<br>
+<br>
+
+
+                          <app-graphique></app-graphique>

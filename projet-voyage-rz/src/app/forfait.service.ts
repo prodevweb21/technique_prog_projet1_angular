@@ -15,6 +15,7 @@ const httpOptions = {
 export class ForfaitService {
 
   forfaitsUrl = 'http://localhost/api-forfaits-voyages/api/';
+  destination: string;
 
   constructor(private http: HttpClient) { }
 
@@ -30,10 +31,11 @@ export class ForfaitService {
     return this.http.put<Forfait>(this.forfaitsUrl + "?id=" + forfait.id, forfait, httpOptions);
   }
   // source diapo cours
-    UpdateForfait(forfait: Forfait): Observable<any> {
-    const id = forfait.id;
-    return this.http.put<Forfait>(this.forfaitsUrl + "?id=" + id, forfait, httpOptions);
-}
+//     UpdateForfait(forfait: Forfait): Observable<any> {
+//     const id = forfait.id;
+//     return this.http.put<Forfait>(this.forfaitsUrl + "?id=" + id, forfait, httpOptions);
+// }
+
   deleteForfait(id: string): Observable<Forfait> {
     return this.http.delete<Forfait>(this.forfaitsUrl + "?id=" +  id);
   }

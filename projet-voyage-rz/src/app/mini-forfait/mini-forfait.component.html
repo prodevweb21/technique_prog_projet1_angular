@@ -5,7 +5,7 @@
 
 <ng-container *ngFor="let forfait of forfaits">
 
-<mat-card class="example-card" *ngIf="forfait.vedette">
+<mat-card class="example-card text-center" *ngIf="forfait.vedette == true">
 
 
       <!-- Ici affichage avec ngIf du forfait vedette uniquement-->
@@ -13,7 +13,7 @@
     <mat-card-title-group>
 
     <!-- ngStyle pour mettre de l'avant le forfait vedette via un bouton & affichage du bouton uniquement sur le forfait vedette-->
-    <button *ngIf="forfait.vedette" class="btn btn-danger"[ngStyle]="{'font-size.px':5, 'font-style':'initial', 'color':'black'}"><h2>Forfait vedette</h2></button>
+    <button *ngIf="forfait.vedette == true" class="btn btn-danger"[ngStyle]="{'font-size.px':5, 'font-style':'initial', 'color':'black'}"><h2>Forfait vedette</h2></button>
 
       <mat-card-title>{{forfait.destination}} <h4>De {{forfait.ville_de_depart}}</h4></mat-card-title>
       
@@ -31,13 +31,13 @@
       </mat-card-content>
       
       <i class="fa fa-tag" *ngIf="forfait.vedette" aria-hidden="true">solde</i>
-      <span *ngIf="forfait.vedette  && forfait.prix ==500" istrue><p class="line">{{forfait.prix}}$</p> avec un <b>{{forfait.rabais}}$</b> de rabais. 
+      <span *ngIf="forfait.prix ==500" istrue><p class="line">{{forfait.prix}}$</p> avec un <b>{{forfait.rabais}}$</b> de rabais. 
         <br> Le prix du forfait sera de <b>{{result}}$</b></span> 
 
-      <span *ngIf="forfait.vedette  && forfait.prix ==1200" istrue><p class="line">{{forfait.prix}}$</p> avec un <b>{{forfait.rabais}}$</b> de rabais. 
+      <span *ngIf="forfait.prix ==1200" istrue><p class="line">{{forfait.prix}}$</p> avec un <b>{{forfait.rabais}}$</b> de rabais. 
           <br> Le prix du forfait sera de <b>{{result1}}$</b></span> 
   
-          <span *ngIf="forfait.vedette  && forfait.prix ==1050" istrue><p class="line">{{forfait.prix}}$</p> avec un <b>{{forfait.rabais}}$</b> de rabais. 
+          <span *ngIf="forfait.prix ==1050" istrue><p class="line">{{forfait.prix}}$</p> avec un <b>{{forfait.rabais}}$</b> de rabais. 
             <br> Le prix du forfait sera de <b>{{result2}}$</b></span> 
   
 
@@ -47,3 +47,6 @@
       </mat-card>
       </ng-container>
 
+
+      <!-- La liste de tous les forfaits qui s'affiche sue la page d'acceuil -->
+        <app-forfait-complet></app-forfait-complet>

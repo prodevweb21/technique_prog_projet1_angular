@@ -1,6 +1,6 @@
 
 
-      <mat-card class="container-fluid" *ngFor="let forfait of forfaits">
+      <mat-card class="container-fluid text-center" *ngFor="let forfait of forfaits">
 
   
     <div class="container">
@@ -9,7 +9,7 @@
     </mat-card-title>
 
     <!-- ngStyle pour mettre de l'avant le forfait vedette via un bouton & affichage du bouton uniquement sur le forfait vedette -->
-    <button *ngIf="forfait.vedette" class="btn btn-danger"[ngStyle]="{'font-size.px':25, 'font-style':'initial', 'color':'black'}"><h2>Forfait vedette</h2></button>
+    <button *ngIf="forfait.vedette == true " class="btn btn-danger"[ngStyle]="{'font-size.px':25, 'font-style':'initial', 'color':'black'}"><h2>Forfait vedette</h2></button>
     
 
     <div class="items p-3">
@@ -32,20 +32,20 @@
       <!-- Application de l'icon font awesome au forfait vedette uniquement  -->
       {{forfait.prix}}$
       <br>
-    <i class="fa fa-tag" *ngIf="forfait.vedette" aria-hidden="true">solde</i>
+    <i class="fa fa-tag" *ngIf="forfait.vedette == true" aria-hidden="true">solde</i>
              
 
     <!-- Application du rabais au forfait vedette-->
 
     
 
-      <span *ngIf="forfait.vedette  && forfait.prix <=700" istrue><p class="line">{{forfait.prix}}$</p> avec un <b>{{forfait.rabais}}$</b> de rabais. 
+      <span *ngIf="forfait.prix <=700" istrue><p class="line">{{forfait.prix}}$</p> avec un <b>{{forfait.rabais}}$</b> de rabais. 
         <br> Le prix du forfait sera de <b>{{result}}$</b></span> 
 
-      <span *ngIf="forfait.vedette  && forfait.prix ==1200" istrue><p class="line">{{forfait.prix}}$</p> avec un <b>{{forfait.rabais}}$</b> de rabais. 
+      <span *ngIf="forfait.prix ==1200" istrue><p class="line">{{forfait.prix}}$</p> avec un <b>{{forfait.rabais}}$</b> de rabais. 
           <br> Le prix du forfait sera de <b>{{result1}}$</b></span> 
   
-          <span *ngIf="forfait.vedette  && forfait.prix ==1050" istrue><p class="line">{{forfait.prix}}$</p> avec un <b>{{forfait.rabais}}$</b> de rabais. 
+          <span *ngIf="forfait.prix ==1050" istrue><p class="line">{{forfait.prix}}$</p> avec un <b>{{forfait.rabais}}$</b> de rabais. 
             <br> Le prix du forfait sera de <b>{{result2}}$</b></span> 
 
     <br>

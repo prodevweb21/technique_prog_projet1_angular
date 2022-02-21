@@ -29,10 +29,23 @@ import {MatChipsModule} from '@angular/material/chips';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { DialogFormulaireForfaitsComponent } from './dialog-formulaire-forfaits/dialog-formulaire-forfaits.component';
-
+import { NavbarComponent } from './navbar/navbar.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { DestinationMexiquePipe } from './destination-mexique.pipe';
+import { ForfaitsCubaComponent } from './forfaits-cuba/forfaits-cuba.component';
+import { ForfaitsMexiqueComponent } from './forfaits-mexique/forfaits-mexique.component';
+import { DestinationCubaPipe } from './destination-cuba.pipe';
+import { GraphiqueComponent } from './graphique/graphique.component';
+import { NgChartsModule } from 'ng2-charts';
+import {MatSelectModule} from '@angular/material/select';
+import { Graphique1Component } from './graphique1/graphique1.component';
+import { Graphique2Component } from './graphique2/graphique2.component';
+// import {Chart} from 'chart.js';
 
 @NgModule({
   declarations: [
+    DestinationCubaPipe,
+    DestinationMexiquePipe,
     AppComponent,
     MiniForfaitComponent,
     ForfaitCompletComponent,
@@ -42,9 +55,19 @@ import { DialogFormulaireForfaitsComponent } from './dialog-formulaire-forfaits/
     ListeForfaitComponent,
     FormulaireComponent,
     DialogFormulaireForfaitsComponent,
+    NavbarComponent,
+    DestinationMexiquePipe,
+    ForfaitsCubaComponent,
+    ForfaitsMexiqueComponent,
+    DestinationCubaPipe,
+    GraphiqueComponent,
+    Graphique1Component,
+    Graphique2Component,
 
   ],
   imports: [
+    MatSelectModule,
+    MatToolbarModule,
     MatDialogModule,
     MatAutocompleteModule,
     ReactiveFormsModule,
@@ -62,8 +85,10 @@ import { DialogFormulaireForfaitsComponent } from './dialog-formulaire-forfaits/
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    NgbModule
+    NgbModule,
+    NgChartsModule,
   ],
+
   providers: [ForfaitService],
   bootstrap: [AppComponent]
 })

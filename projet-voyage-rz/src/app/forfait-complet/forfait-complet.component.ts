@@ -18,7 +18,9 @@ export class ForfaitCompletComponent implements OnInit {
 
   result= 500-100;
   result1=1200-100;
-  result2=1050-100
+  result2=1050-100;
+  true = 1;
+  false = 0;
 
   forfaits: Forfait[] = [];
 

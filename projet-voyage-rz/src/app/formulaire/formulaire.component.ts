@@ -8,7 +8,6 @@ import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
 import { NgForm } from '@angular/forms';
 
-import { MatTable } from '@angular/material/table';
 import { Forfait } from '../forfait';
 import { ForfaitService } from '../forfait.service';
 
@@ -19,18 +18,20 @@ import { ForfaitService } from '../forfait.service';
 })
 export class FormulaireComponent implements OnInit {
 
+  
+
   // Tableau des ajouts des caractéristiques
 
   separatorKeysCodes: number[] = [ENTER, COMMA];
   caracteristiqueCtrl = new FormControl();
   filteredCaracteristiques: Observable<string[]>;
-  Caracteristiques: string[] = ['Golf'];
-  allCaracteristiques: string[] = ['Piscine', 'Théatre', 'Océan', 'Spa', 'Site historique'];
+  Caracteristiques: string[] = ['Spa'];
+  allCaracteristiques: string[] = ['Piscine', 'Théatre', 'Océan', 'Site historique', 'Golf'];
 
   @ViewChild('caracteristiqueInput') caracteristiqueInput: ElementRef<HTMLInputElement>;
 
   // Données de l'API.
-  @Input() forfait: Forfait = {id: '', destination: '', ville_de_depart: '', hotel: {nom_hotel: '', coordonnees: '', nombre_etoiles: 0, nombre_chambres: 0, caracteristiques:[]}, date_de_depart: '', date_de_retour: '', prix: 0, rabais: 0, vedette: true,};
+  @Input() forfait: Forfait = {id: '', destination: '', ville_de_depart: '', hotel:{nom_hotel: '', coordonnees: '', nombre_etoiles: 0, nombre_chambres: 0, caracteristiques:[]}, date_de_depart: '', date_de_retour: '', prix: 0, rabais: 0, vedette: true,};
 
   @Output() majTableau = new EventEmitter() ;
 
@@ -54,7 +55,9 @@ export class FormulaireComponent implements OnInit {
 
         // ajout des caractéristiques
     if (value) {
-      this.Caracteristiques.push(value);
+      this.forfait.hotel.caracteristiques.push(value);
+
+
     }
 
     // Effacer la valeur d’entrée
@@ -66,9 +69,10 @@ export class FormulaireComponent implements OnInit {
   remove(caracteristique: string): void {
     const index = this.Caracteristiques.indexOf(caracteristique);
 
-    if (index >= 0) {
-      this.Caracteristiques.splice(index, 1);
-    }
+    if (index !== -1) {
+      this.Caracteristiques.splice(index, 1,);
+      }
+      
   }
 
   selected(event: MatAutocompleteSelectedEvent): void {
@@ -80,10 +84,12 @@ export class FormulaireComponent implements OnInit {
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
 
-    return this.allCaracteristiques.filter(caracteristique => caracteristique.toLowerCase().includes(filterValue));
+    return this.forfait.hotel.caracteristiques = this.allCaracteristiques.filter(caracteristique => caracteristique.toLowerCase().includes(filterValue));
   }
  
-    // Panneau de changement CRUD
+
+
+    // Panneau de changement Edit/Add
       onSave(forfaitForm: NgForm) {
     if (forfaitForm.valid) {
       
@@ -94,6 +100,8 @@ export class FormulaireComponent implements OnInit {
 
       } else { 
         // Sinon, on doit ajouter le produit
+        // this.forfait.hotel.caracteristiques = ['Test1', 'Test2'];
+
         this.forfaitService.addForfait(this.forfait).subscribe(_ => { this.majTableau.emit()  });
       }
       }

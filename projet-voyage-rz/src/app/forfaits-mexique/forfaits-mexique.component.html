@@ -1,0 +1,54 @@
+<p>forfaits-mexique works!</p>
+
+<!-- Methode : PipeFiltre angular -->
+
+<div *ngFor="let forfait of (forfaits | destinationMexique)">
+
+    <mat-card class="container-fluid">
+    <div class="container">
+        <mat-card-title P-3>
+          <img src="/assets/mexique-tulum.jpg" width="250" height="500" >
+        </mat-card-title>
+    
+        <!-- ngStyle pour mettre de l'avant le forfait vedette via un bouton & affichage du bouton uniquement sur le forfait vedette -->
+        <button *ngIf="forfait.vedette == true " class="btn btn-danger"[ngStyle]="{'font-size.px':25, 'font-style':'initial', 'color':'black'}"><h2>Forfait vedette</h2></button>
+        
+    
+        <div class="items p-3">
+        <h2>{{forfait.destination}}</h2> <h4>De {{forfait.ville_de_depart}}.</h4>
+        <h2><span>Séjour au </span>{{forfait.hotel.nom_hotel}}.</h2>
+        <br>
+        <h3>Nombre d'étoiles:
+          <app-etoiles [starRating]= forfait.hotel.nombre_etoiles></app-etoiles>
+        </h3>
+        <h3>Adresse de l'hôtel:<br>{{forfait.hotel.coordonnees}}.</h3>
+        <h3>Nombre de chambres:{{forfait.hotel.nombre_chambres}}.</h3>
+        <h3>Tout inclus:{{forfait.hotel.caracteristiques}}.</h3>
+        <br>
+        <h3>Date de départ:{{forfait.date_de_depart}}.</h3>
+        <h3>Date de retour: {{forfait.date_de_retour}}.</h3>
+        <br>
+        </div>
+        <div class="container-flex">
+          
+          <!-- Application de l'icon font awesome au forfait vedette uniquement  -->
+          {{forfait.prix}}$
+          <br>
+        <i class="fa fa-tag" *ngIf="forfait.vedette == true" aria-hidden="true">solde</i>
+                 
+    
+        <!-- Application du rabais au forfait vedette-->
+    
+        
+    
+          
+    
+        <br>
+        (tx. et frais incl. par adulte).
+        </div>
+        </div>
+        </mat-card>
+    
+
+    
+    </div>
