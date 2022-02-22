@@ -4,6 +4,7 @@
 
 .mat-card {
   display: inline-flex;
+  padding: 10px;
   margin-left: 10px;
   width: 30%;
   margin-bottom: 3rem;

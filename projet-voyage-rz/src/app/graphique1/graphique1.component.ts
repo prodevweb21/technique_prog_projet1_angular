@@ -20,10 +20,11 @@ export class Graphique1Component implements OnInit {
   };
 
   public donnee: ChartData<'bar', number[], string | string[]> = {
-    labels: ['nbr_occupants', 'activite_spa', 'service_transport', 'film_sur_demande', 'minibar_collation', 'qte_cartes_cadeaux', 'nbr_reclamations', 'nbr_annulations' ],
+    labels: [ 'id', 'nbr_occupants', 'qte_cartes_cadeaux', 'spa', 'transport', 'minibar', 'nbr_reclamations', 'nbr_annulations'],
     datasets: [
-      { data: [800, 581, 568, 485, 852, 215, 749, 542], label: 'Moyenne A' },
-      { data: [400, 190, 230, 140, 200, 356, 487, 678], label: 'Moyenne B' }
+      { data: [0], label: '2018' },
+      { data: [1], label: '2019' },
+
     ]
   };
 
@@ -34,11 +35,35 @@ export class Graphique1Component implements OnInit {
 
   ngOnInit(): void {
     this.getDonnees();
+    
   }
 
   getDonnees() : void {
       this.donneeService.getDonnees()
-          .subscribe(resultat => this.donnees = resultat);
+          .subscribe(resultat => {
+            this.donnees = resultat;
+            // Légende A
+            this.donnee.datasets[0].data.push(this.donnees[0].nbr_occupants);
+            this.donnee.datasets[0].data.push(this.donnees[0].qte_cartes_cadeaux);
+            this.donnee.datasets[0].data.push(this.donnees[0].spa);
+            this.donnee.datasets[0].data.push(this.donnees[0].transport);
+            this.donnee.datasets[0].data.push(this.donnees[0].minibar);
+            this.donnee.datasets[0].data.push(this.donnees[0].nbr_reclamations);
+            this.donnee.datasets[0].data.push(this.donnees[0].nbr_annulations);
+
+
+            // Légende B
+            this.donnee.datasets[1].data.push(this.donnees[1].nbr_occupants);
+            this.donnee.datasets[1].data.push(this.donnees[1].qte_cartes_cadeaux);
+            this.donnee.datasets[1].data.push(this.donnees[1].spa);
+            this.donnee.datasets[1].data.push(this.donnees[1].transport);
+            this.donnee.datasets[1].data.push(this.donnees[1].minibar);
+            this.donnee.datasets[1].data.push(this.donnees[1].nbr_reclamations);
+            this.donnee.datasets[1].data.push(this.donnees[1].nbr_annulations);
+
+
+            
+          });
     }
 
 

@@ -7,6 +7,7 @@ import { FormulaireComponent } from './formulaire/formulaire.component';
 import { ListeForfaitComponent } from './liste-forfait/liste-forfait.component';
 import { MiniForfaitComponent } from './mini-forfait/mini-forfait.component';
 import { ForfaitsMexiqueComponent } from './forfaits-mexique/forfaits-mexique.component';
+import { AProposComponent } from './a-propos/a-propos.component';
 // import  { ListeForfaitComponent } from './liste-forfait/liste-forfait.component'
 
 // Ce bout de code permet de mettre toute la liste des forfaits complet dans un lien -à ouvrir-
@@ -23,7 +24,9 @@ const routes: Routes = [
   {path: 'accueil', component: MiniForfaitComponent},
   {path: 'Admin', component: FormGestionForfaitComponent},
   {path: 'cuba', component: ForfaitsCubaComponent},
-  {path: 'mexique', component: ForfaitsMexiqueComponent}
+  {path: 'mexique', component: ForfaitsMexiqueComponent},
+  {path: 'apropos', component: AProposComponent}
+
 
 
 

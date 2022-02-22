@@ -1,12 +1,11 @@
 export interface Donnee {
 
-    id: string,
+    id: number,
     nbr_occupants: number,
-    activite_spa: string,
-    service_transport: string,
-    film_sur_demande: string,
-    minibar_collation: string,
     qte_cartes_cadeaux: number,
+    spa: number,
+    transport: number,
+    minibar: number,
     nbr_reclamations: number,
     nbr_annulations: number,
 

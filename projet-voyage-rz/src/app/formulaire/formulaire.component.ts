@@ -84,7 +84,7 @@ export class FormulaireComponent implements OnInit {
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
 
-    return this.forfait.hotel.caracteristiques = this.allCaracteristiques.filter(caracteristique => caracteristique.toLowerCase().includes(filterValue));
+    return this.allCaracteristiques.filter(caracteristique => caracteristique.toLowerCase().includes(filterValue));
   }
  
 
@@ -92,6 +92,7 @@ export class FormulaireComponent implements OnInit {
     // Panneau de changement Edit/Add
       onSave(forfaitForm: NgForm) {
     if (forfaitForm.valid) {
+      this.forfait.hotel.caracteristiques = this.Caracteristiques;
       
       if (this.forfait.id != null && this.forfait.id != '') {
         // Si on a un id, on doit modifier le produit

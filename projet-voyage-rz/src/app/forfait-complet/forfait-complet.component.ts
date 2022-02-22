@@ -16,9 +16,7 @@ export class ForfaitCompletComponent implements OnInit {
 
   titre = 'La liste complètes des forfaits'
 
-  result= 500-100;
-  result1=1200-100;
-  result2=1050-100;
+
   true = 1;
   false = 0;
 

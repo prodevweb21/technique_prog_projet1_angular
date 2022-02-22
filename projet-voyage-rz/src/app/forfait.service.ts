@@ -30,14 +30,9 @@ export class ForfaitService {
   editForfait(forfait: Forfait): Observable<Forfait>{
     return this.http.put<Forfait>(this.forfaitsUrl + "?id=" + forfait.id, forfait, httpOptions);
   }
-  // source diapo cours
-//     UpdateForfait(forfait: Forfait): Observable<any> {
-//     const id = forfait.id;
-//     return this.http.put<Forfait>(this.forfaitsUrl + "?id=" + id, forfait, httpOptions);
-// }
-
+  
   deleteForfait(id: string): Observable<Forfait> {
-    return this.http.delete<Forfait>(this.forfaitsUrl + "?id=" +  id);
+    return this.http.delete<Forfait>(this.forfaitsUrl + "?id=" + id);
   }
 }
 

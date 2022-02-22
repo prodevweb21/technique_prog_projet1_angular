@@ -40,6 +40,7 @@ import { NgChartsModule } from 'ng2-charts';
 import {MatSelectModule} from '@angular/material/select';
 import { Graphique1Component } from './graphique1/graphique1.component';
 import { Graphique2Component } from './graphique2/graphique2.component';
+import { AProposComponent } from './a-propos/a-propos.component';
 // import {Chart} from 'chart.js';
 
 @NgModule({
@@ -63,6 +64,7 @@ import { Graphique2Component } from './graphique2/graphique2.component';
     GraphiqueComponent,
     Graphique1Component,
     Graphique2Component,
+    AProposComponent,
 
   ],
   imports: [

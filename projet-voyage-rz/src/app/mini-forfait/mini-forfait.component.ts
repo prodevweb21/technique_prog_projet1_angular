@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Forfait } from '../forfait';
-// import { FORFAITS } from '../mock-forfaits';
-// declare function myMethod(): any;
 import { ForfaitService } from '../forfait.service';
 
 
@@ -14,12 +12,8 @@ import { ForfaitService } from '../forfait.service';
 })
 export class MiniForfaitComponent implements OnInit {
 
-  // forfaits : Forfait[] = FORFAITS;
   forfaits: Forfait[] = [];
 
-  result= 500-100;
-  result1=1200-100;
-  result2=1050-100
   true = 1;
   false = 0;
 

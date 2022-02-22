@@ -16,7 +16,7 @@ export class FormGestionForfaitComponent implements OnInit {
   forfaits: Forfait[] = [];
   selectedForfait?: Forfait;
 
-  columnsToDisplay = ['id', 'destination', 'ville_de_depart', 'nom_hotel', 'coordonnees', 'nombre_etoiles', 'nombre_chambres', 'caracteristiques', 'date_de_depart', 'date_de_retour', 'prix', 'rabais', 'vedette', 'actions'];
+  columnsToDisplay = ['destination', 'ville_de_depart', 'nom_hotel', 'coordonnees', 'nombre_etoiles', 'nombre_chambres', 'caracteristiques', 'date_de_depart', 'date_de_retour', 'prix', 'rabais', 'vedette', 'actions'];
 
   constructor(private forfaitService: ForfaitService, public dialog: MatDialog) { }
 
@@ -31,9 +31,10 @@ export class FormGestionForfaitComponent implements OnInit {
 
 
     onDelete(forfait: Forfait): void {
-      this.forfaitService.deleteForfait(forfait.id).subscribe(result => this.forfaits = this.forfaits.filter(f => f !== forfait));
+      this.forfaitService.deleteForfait(forfait.id)
+      .subscribe(_result => this.forfaits = this.forfaits.filter(f => f !== forfait));
     }
-  
+
     
     //  Edite  avec le dialog
     onSelect(forfait?: Forfait) {

@@ -40,6 +40,8 @@
         <!-- Application du rabais au forfait vedette-->
     
         
+        <span *ngIf="forfait.prix && forfait.vedette == true"><p class="line">{{forfait.prix}}$</p> avec un <b>{{forfait.rabais}}$</b> de rabais. 
+          <br> Le prix du forfait sera de <b>{{((forfait.prix - forfait.rabais))}}$</b></span> 
     
           
     

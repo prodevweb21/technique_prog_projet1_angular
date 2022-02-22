@@ -30,23 +30,19 @@
     <div class="container-flex">
       
       <!-- Application de l'icon font awesome au forfait vedette uniquement  -->
-      {{forfait.prix}}$
+      <b>{{forfait.prix}}$</b>
       <br>
-    <i class="fa fa-tag" *ngIf="forfait.vedette == true" aria-hidden="true">solde</i>
              
-
     <!-- Application du rabais au forfait vedette-->
 
-    
+    <i class="fa fa-tag" *ngIf="forfait.vedette == true" aria-hidden="true">solde</i>
 
-      <span *ngIf="forfait.prix <=700" istrue><p class="line">{{forfait.prix}}$</p> avec un <b>{{forfait.rabais}}$</b> de rabais. 
-        <br> Le prix du forfait sera de <b>{{result}}$</b></span> 
+    <span *ngIf="forfait.prix && forfait.vedette == true"><p class="line">{{forfait.prix}}$</p> avec un <b>{{forfait.rabais}}$</b> de rabais. 
+      <br> Le prix du forfait sera de <b>{{((forfait.prix - forfait.rabais))}}$</b></span> 
 
-      <span *ngIf="forfait.prix ==1200" istrue><p class="line">{{forfait.prix}}$</p> avec un <b>{{forfait.rabais}}$</b> de rabais. 
-          <br> Le prix du forfait sera de <b>{{result1}}$</b></span> 
+
+
   
-          <span *ngIf="forfait.prix ==1050" istrue><p class="line">{{forfait.prix}}$</p> avec un <b>{{forfait.rabais}}$</b> de rabais. 
-            <br> Le prix du forfait sera de <b>{{result2}}$</b></span> 
 
     <br>
     (tx. et frais incl. par adulte).
