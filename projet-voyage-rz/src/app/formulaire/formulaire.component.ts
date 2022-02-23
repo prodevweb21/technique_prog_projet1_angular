@@ -26,7 +26,7 @@ export class FormulaireComponent implements OnInit {
   caracteristiqueCtrl = new FormControl();
   filteredCaracteristiques: Observable<string[]>;
   Caracteristiques: string[] = ['Spa'];
-  allCaracteristiques: string[] = ['Piscine', 'Théatre', 'Océan', 'Site historique', 'Golf'];
+  allCaracteristiques: string[] = ['Piscine', 'Théatre', 'Océan', 'Site historique', 'Golf', 'Salle de sport', 'Discothèque'];
 
   @ViewChild('caracteristiqueInput') caracteristiqueInput: ElementRef<HTMLInputElement>;
 
@@ -101,8 +101,6 @@ export class FormulaireComponent implements OnInit {
 
       } else { 
         // Sinon, on doit ajouter le produit
-        // this.forfait.hotel.caracteristiques = ['Test1', 'Test2'];
-
         this.forfaitService.addForfait(this.forfait).subscribe(_ => { this.majTableau.emit()  });
       }
       }

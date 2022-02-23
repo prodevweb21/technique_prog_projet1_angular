@@ -20,10 +20,10 @@ export class Graphique1Component implements OnInit {
   };
 
   public donnee: ChartData<'bar', number[], string | string[]> = {
-    labels: [ 'id', 'nbr_occupants', 'qte_cartes_cadeaux', 'spa', 'transport', 'minibar', 'nbr_reclamations', 'nbr_annulations'],
+    labels: ['nbr_occupants', 'qte_cartes_cadeaux', 'spa', 'transport', 'minibar', 'nbr_reclamations', 'nbr_annulations'],
     datasets: [
-      { data: [0], label: '2018' },
-      { data: [1], label: '2019' },
+      { data: [], label: '2018' },
+      { data: [], label: '2019' },
 
     ]
   };
