@@ -4,7 +4,7 @@
 
 #Ouvrer le projet avec la commande : ng serve --open
 
-L'API-forfaits qui a été utilisée dans ce projet a été crée au complet.
+L'API-forfaits qui a été utilisée dans ce projet a été créé au complet.
 
 L'API-forfaits est disponible dans le repository api-forfaits
 
